@@ -1,0 +1,374 @@
+$icon-font-path: "/bower_components/bootstrap-sass-official/vendor/assets/fonts/bootstrap/";
+$fa-font-path: "/bower_components/font-awesome/fonts";
+
+@import 'bootstrap-sass-official/vendor/assets/stylesheets/bootstrap';
+@import 'font-awesome/scss/font-awesome';
+
+/**
+ * App-wide Styles
+ */
+
+*{
+    font-family:'Foco W01 Regular',Arial,sans-serif;
+ /*   transition: all 0.25s ease-in-out;*/
+}
+
+body{
+    background: #eee;
+}
+.container-fluid{
+    // max-width: 1200px;
+}
+
+.breadcrumb {
+  background-color:#FFF;
+  margin: 15px 0;
+  > li {
+    + li:before{
+      content: "| ";
+    }
+
+    a{
+      color: #7D7D7D;
+    }
+  }
+  > li:nth-child(n+2) a{
+      color: #09a1c3;
+      font-weight: 700;
+    }
+  > li:last-child:before{
+      content: " ";
+    }
+      > li:last-child{
+      float: right; 
+    }
+}
+ 
+ 
+                           
+.navbar-default  {
+    background-color:#098BA7;
+    line-height: 1.5em;
+    border-bottom: 1px solid #0ba2c3;
+    .navbar-nav > li > a{
+        color:#FFF;
+        font-size: 1.125em; 
+        text-decoration: none;
+        font-family: "Foco",Arial,sans-serif;
+        font-weight: normal;
+        &:hover{
+             color:#FFF;
+             background-color:#0BA2C3;
+        }
+    }
+    .navbar-nav > li{
+        border-right: 1px solid #0ba2c3;
+    }
+    .navbar-nav > li:first-of-type{
+        background-color:#0BA2C3;
+    }
+}
+
+.browsehappy {
+    margin: 0.2em 0;
+    background: #ccc;
+    color: #000;
+    padding: 0.2em 0;
+}
+
+.heatmap-wrapper {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    opacity: 0;
+    left: 0;
+    top: 0;
+    -webkit-transition: .3s ease all;
+    -moz-transition: .3s ease all;
+    transition: .3s ease all;
+    opacity: 0.3;
+    border-bottom: 1px solid rgba(255,0,0,.6);
+    z-index: 100000;
+    pointer-events:none;
+}
+.heatmap {
+    width: 100%;
+    height: 100%;
+    position:relative;
+}
+.clickable{
+	cursor:pointer;
+}
+
+
+
+.footer {
+    text-align: center;
+    padding: 30px 0;
+    margin-top: 70px;
+    border-top: 1px solid #E5E5E5;
+}
+.dropdown-menu{
+    box-shadow:none;
+
+}
+.dropdown-menu{
+	background: #eee; 
+	margin-top:-10px;
+}
+.dropdown-menu > .active > a, .dropdown-menu > .active > a:hover, .dropdown-menu > .active > a:focus {
+  color: #fff;
+  background-color: #A4C4EE; }
+
+  figure.custom-page-link{
+  	width: 420px;
+  	height: 140px;
+    color: #5E9732; 
+    word-wrap: break-word;
+    white-space: pre-line;
+    i{
+    	width: 180px;
+    	height: 180px;
+    	float: left;
+    	background-size: 100%;
+    	background-repeat:no-repeat;
+    	margin-right: 1em;
+    }
+    .img-a{
+
+    	background-image:url('/assets/images/navigation/id-card-dd.png');
+    }
+    .img-b{
+    	
+    	background-image:url('/assets/images/navigation/medicare-dd.png');
+    }
+    .img-c{
+    	
+    	background-image:url('/assets/images/navigation/doc-find-dd.png');
+    }
+    h4{
+    color: $brand-primary; 
+    }
+    p{
+    	// overflow-x: auto;
+    	font-size: 1em;
+    	color: #262626;
+    }
+  }
+
+.landing-heading{
+	height:300px;
+	background: #5e9732;
+	color: white;
+	overflow:hidden;
+	h1{
+  margin: 1.0em 0;
+  @media(min-width:992px){
+    margin: 1.0em 1em;
+  }
+		font-size: 3.5em;
+	}
+	.hero{
+		//overflow: hidden;
+	}
+	img{
+  @media(min-width:1280px){
+    float:right;
+    margin-right:35px;
+  }
+		height: 300px;
+	}
+}
+
+ 
+.flex-panel {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  
+
+
+}
+
+.flex-item {
+     padding:0;
+     min-height: 400px;
+     background-size:cover;
+     position:relative;
+
+     .cta{
+       a{
+          cursor: pointer;
+          color: #FFF;
+          text-decoration: none;
+        }
+     	padding:1em;
+     	width: 90%;
+     	position:absolute;
+     	bottom:2em;
+     	left:5%;
+     	background-color:#2BA3C2;
+     	color: #FFF;
+     	-webkit-box-shadow: 1px 2px 5px 0px rgba(43,43,43,1);
+		-moz-box-shadow: 1px 2px 5px 0px rgba(43,43,43,1);
+		box-shadow: 1px 2px 5px 0px rgba(43,43,43,1);
+
+  		h3{
+  			font-weight:700;
+       
+  		}
+     }
+}
+
+.content-panel{
+  @media(min-width:992px){
+      margin-top: -1em;
+  }
+    padding:0;
+    background: #FFF;
+    overflow: hidden;
+
+    >h5{
+      margin-left: 1em;
+      a{
+        color:#0BA2C3;
+      }
+        
+    }
+    .content-container{
+      background-color:#FFF;
+      border-radius:3px;
+      // padding: 1em;
+    }
+}
+
+
+.faq{
+
+  padding-left:40px;
+  .title{
+    color:#09a1c3;
+    font-size: 1.5em;
+    font-weight: 700;
+  }
+  .accordion{
+    label{
+      width: 100%;
+      cursor:pointer;
+      padding-left:20px;
+      min-height: 20px;
+      user-select: none;
+      background:url('../assets/images/plus.png') no-repeat 0px 2px;
+    }
+    label:hover{
+      background-color:#ecf8fb;
+    }
+    p{
+      padding: 0 20px;
+      height:0;
+      opacity: 0;
+      overflow: hidden;
+      transition: opacity 0.2s ease-in-out;
+    }
+    input{
+      display: none;
+    }
+    input:checked + label{
+
+      background:url('../assets/images/minus.png') no-repeat 0px 2px;
+    }
+    input:checked + label + p {
+      height: auto;
+      opacity: 1;
+    }
+  }
+}
+
+  .command-active{
+   background-position-x: center;
+     // .cta{
+     //    width:100%;
+     //    left: 0;
+     //    bottom: 0;
+     //    box-shadow: none;
+     // }
+  }
+  .command-form{
+    padding:2em 1em;
+
+    .sub-form{
+
+      border-right:1px solid #FFF;
+    }
+    legend{
+      color: #FFF;
+      border:none;
+      small{
+        font-size: .5em;
+        line-height: 5px;
+      }
+    }
+
+  
+    .form-group{
+      padding:5px;
+      margin:0 auto;
+
+      input, select{
+        padding:3px;
+        font-size: 1.35em;
+        margin-top: 1em;
+        border:none;
+        width: 95%;
+      }
+
+      .login{
+        background-color:#5e9732;
+        color: #FFF;
+        width: auto;
+        padding:10px 15px;
+      }
+      .secondary-action{
+        padding-left:10px;
+        white-space: pre;
+        line-height: 42px;
+
+      }
+      a{
+        color: #FFF;
+      }
+      
+    }
+    .form-group.main{
+      margin-top:10px;
+      input[type="text"],input[type="password"]{
+        font-size: 1.5em;
+        padding:6px;
+      }
+    }
+  }
+
+    .user-login{ 
+      position: relative;
+      background: #09a1c3;
+      height: 100%;
+      .close-form{
+        position:absolute;
+        font-weight: 900;
+        color: #FFF;
+        top:5px;
+        right: 5px;
+      }
+    }
+
+
+
+// Component styles are injected through grunt
+// injector
+@import 'docfind/docfind.scss';
+@import 'id-card/id-card.scss';
+@import 'main/main.scss';
+@import 'medicare/medicare.scss';
+@import 'search/search.scss';
+@import 'modal/modal.scss';
+// endinjector

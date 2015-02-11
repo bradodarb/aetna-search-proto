@@ -1,0 +1,151 @@
+
+<div ng-controller="IdCardCtrl">
+  <div ng-include="'components/search/search-header.html'"></div>
+
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-10 col-md-offset-1 landing-heading">
+        <div class="col-sm-7">
+          <h1>Find all you need to know about your ID card</h1>
+        </div>
+        <div class="col-sm-5 hero hidden-xs">
+          <img src="/assets/images/landing/id-card-hero.png">
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-8 col-md-offset-2 content-panel">
+        <ol class="breadcrumb">
+          <li><a href="/"> Aetna </a></li>
+          <li><a href="/id-card">ID Card Information</a></li>
+          <li><a href="/search-results">See other results &gt; </a></li>
+        </ol>
+          <div class="content-container">
+            <div class="row flex-panel">
+               <div class="flex-item id-card-1" ng-hide="commandStatus == 'replace'" ng-class="commandStatus == 'register' ? ['command-active', 'col-md-4'] : 'col-md-6 '">
+
+                  <div class="cta">
+                    <a ng-click="setRegister()" >
+                      <h3>View or print your ID card > </h3>
+                      <!--<p ng-hide="commandStatus == 'register'">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque dapibus quis odio vel volutpat.</p>-->
+                    </a>
+                  </div>
+
+                </div>
+
+                <div class=" flex-item id-card-2" ng-hide="commandStatus == 'register'" ng-class="commandStatus == 'replace' ? ['command-active','col-md-4'] : 'col-md-6'">
+                  <div class="cta">
+                    <a ng-click="setReplace()">
+                      <h3>Order your replacement ID card > </h3>
+                      <!--<p ng-hide="commandStatus == 'replace'">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque dapibus quis odio vel volutpat.</p>-->
+                    </a>
+                  </div> 
+               </div>
+
+               <div class="user-login col-md-8 flex-item" ng-show="commandStatus == 'replace'">
+                  <span ng-click="setIdle()" class="close-form glyphicon glyphicon-remove"> </span>
+                  <form class="command-form">
+                    <div class="col-xs-7 ">
+                      <fieldset >
+                        <legend>
+                          <h2>Select a member and card type</h2>  
+                        </legend>
+                        <div class="form-group pad-top-30 main">
+                        <select placeholder="Name">
+                          <option>Gabe</option>
+                        </select>
+                        <select placeholder="Coverage">
+                          <option>Medical</option>
+                          <option>Dental</option>
+                          <option>Vision</option>
+                        </select>
+                        <small>This is the email address we have on file for you</small>
+                        <input type="email" placeholder="Email">
+                        <input class="login" type="button" value="Order Now">
+                        <br><br>
+                      
+                        </div>
+                      </fieldset>
+                    </div>
+                  
+
+                      <div class="col-xs-5">
+                        <img src="/assets/images/landing/id-card-faq-light.png">
+                      </div>
+                  </form>
+
+               </div>
+
+
+               <div class="user-login col-md-8 flex-item" ng-show="commandStatus == 'register'">
+                  <span ng-click="setIdle()" class="close-form glyphicon glyphicon-remove"> </span>
+
+                    <form class="command-form">
+                    <div class="col-xs-7 sub-form">
+                      <fieldset >
+                        <legend>
+                          <h2>Member Log In</h2>  
+                          <small>You must log in to Order or Print your ID Card.</small>
+                        </legend>
+                        <div class="form-group pad-top-30 main">
+                        <input type="text" placeholder="Username">
+                        <input type="password" placeholder="Password">
+                        <input class="login" type="button" value="Secure log in">
+                        <span class="secondary-action">Forgot <a>username</a> or <a>password</a>?</span>
+                        </div>
+                      </fieldset>
+                    </div>
+                    
+
+                      <fieldset class="col-xs-5">
+                        <legend><h2>Not a Member?</h2></legend>
+                        <div class="form-group ">
+                          
+                          <input type="text" placeholder="Username">
+                          <input type="text" placeholder="Email">
+                          <input type="password" placeholder="Password">
+                          <input type="password" placeholder="Repeat Password">
+                          <input class="login" type="button" value="Register Now">
+
+                        </div>
+                      </fieldset>
+                  </form>
+               </div>
+
+            </div>
+            <div class="row faq">
+              <h2 class="title">Frequently Asked Questions (FAQ)</h2>
+
+              <article class="accordion">
+                <input type="checkbox" id="faq-1">
+                <label for="faq-1">Where can I find specific information on my Identification Card?</label>
+                <p><img src="/assets/images/landing/id-card-faq.png"></p>
+
+                <input type="checkbox" id="faq-2">
+                <label for="faq-2">How do I find a participating provider? </label>
+                 <p>You should call the toll-free member services number on your ID card. We will review your Explanation of Benefits.</p>
+
+                <input type="checkbox" id="faq-3">
+                <label for="faq-3">How do I get a paper provider directory?</label>
+                 <p>You should call the toll-free member services number on your ID card. We will review your Explanation of Benefits.</p>
+
+                <input type="checkbox" id="faq-4">
+                <label for="faq-4">How do I change my PCP?</label>
+                <p>You can change your PCP by going online to Aetna Navigator®. You can also change your choice of primary care physician or dentist by filling out this form. Any changes you make will take effect as soon as we let you know that we have received your form.</p>
+                
+                <input type="checkbox" id="faq-5">
+                <label for="faq-5">Can I change my PCP any time I want?</label>
+                <p>You should call the toll-free member services number on your ID card. We will review your Explanation of Benefits.</p>
+
+                <input type="checkbox" id="faq-6">
+                <label for="faq-6">Can I find an Aetna dentist in the online directory?</label>
+                <p>You should call the toll-free member services number on your ID card. We will review your Explanation of Benefits.</p>
+ 
+              </article>
+
+            </div>
+          </div>
+      </div>
+    </div>
+  </div>  
+</div>

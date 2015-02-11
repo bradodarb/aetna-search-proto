@@ -1,0 +1,137 @@
+
+
+#banner {
+    border-bottom: none;
+    margin-top: -20px;
+}
+
+#banner h1 {
+    font-size: 50px;
+    line-height: 1;
+    letter-spacing: -1px;
+}
+
+
+.hero-image{
+
+    background-image: url('/assets/images/home/hero.jpg');
+    height: 334px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: #eee;
+}
+.slide-copy{
+    margin-top: 3em;
+}
+.newsTop, .article-template .newsTop.container-fluid {
+padding: 16px 0;
+background: #5e9732;
+}
+.newsTop .span12 {
+display: table;
+}
+.newsTop .span12 .newsPosts {
+display: table-cell;
+vertical-align: middle;
+float: none;
+}
+.newsTop .newsPosts {
+border-left: 2px solid #51822b;
+padding-top: 5px;
+}
+.newsMod .newsTitle, .newsTop .newsTitle {
+margin-left: 0;
+vertical-align: top;
+font-family: 'Foco W01 Light',Arial,sans-serif;
+font-size: 1.875em;
+font-weight: normal;
+padding-right: 20px;
+line-height: 1;
+padding-top: 10px;
+width:auto;
+padding-left:20px;
+}
+.newsTop, .article-template .newsTop.container-fluid {
+padding: 16px 0;
+background: #5e9732;
+}
+.greenbg {
+background: #5e9732;
+color: white;
+margin-top: -30px;
+}
+.arrowWhiteSmall, a:hover.arrowWhiteSmall {
+padding-right: 15px;
+font-weight: bold;
+color: white;
+}
+.newsTop .span12 a.newsFeed {
+display: block!important;
+margin-bottom: 10px;
+height: auto!important;
+}
+.newsTop a.alert, .newsTop a:hover.alert {
+color: white;
+display: inline-block;
+margin-bottom: 5px;
+}
+.newsTop .newsFeed {
+margin-left: 20px;
+}
+.newsTop .span12 .newsTitle {
+display: table-cell;
+vertical-align: middle;
+height: 100%;
+float: none;
+padding: 0 20px ;
+}
+ .greenText {
+color: #5e9732;
+font-size: 3.75em;
+}
+.newsPosts .alert-item .alertText{
+    background-color:#FFF;
+    color: #5e9732;
+    font-weight: bold;
+    font-size: .75em;
+    margin-right: .5em;
+    padding: 5px;
+}
+.legal {
+    padding: 1.5em 0;
+    background-color:#FFF;
+    a{
+        font-size: .75em;
+        color: $gray;
+        margin-left: 1.5em;
+    }
+}
+.articles{
+    background-color:#FFF;
+    padding: 0 15px;
+    article{
+        padding:0;
+        width:25% !important;
+        img{
+            width: 100%;
+        }
+        .first{
+            padding-left: 0;
+        }
+
+        .text{
+            padding:2.5em 2em;
+            line-height: 2em;
+
+            h4{
+                color: $brand-success;
+                font-size: 1.875em;
+                line-height: 1;
+                margin: 0 0 24px 0;
+                font-family: 'Foco W01 Regular',Arial,sans-serif;
+                font-weight: normal;
+            }
+        }
+    }
+}
+

@@ -1,0 +1,17 @@
+<div class="container">
+  <div class="row well result-set" ng-hide="!displayQuery()"> 
+      <h1 >Results for  "{{displayQuery()}}" </h1>
+      <div class="result-container row">
+
+      <div class="col-lg-12 results" ng-repeat="result in searchData.results">
+        <div class="row result">
+        <a href="{{result.url}}" target="_blank" class="bs-callout bs-callout-info">
+          <h4 ng-bind-html="result.title"></h4>
+          <span >{{result.url}}</span>
+          <p>{{result.desc}}</p>
+        </a>
+        </div>
+      </div> 
+      </div>
+  </div>
+</div>

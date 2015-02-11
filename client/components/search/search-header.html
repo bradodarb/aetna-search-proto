@@ -1,0 +1,25 @@
+
+<header class="hero-unit" id="banner">
+  <div class="container">
+    <div class="row">
+      <a href="https://www.aetna.com"><img src="assets/images/logo.png" alt="aetna" class="col-md-2"></a>
+      <ul class="nav navbar-nav context-nav">
+            <li class="active hidden-sm"><a href="#" class="primary">&#9776; Menu</a></li>
+            <li class="divider hidden-sm"></li>
+            <li class="hidden-xs"><a href="#">Shop</a></li>
+            <li class="hidden-xs"><a href="#">Log In/Register</a></li>
+            <li class="hidden-xs"><a href="#">Contact</a></li>
+            <li>
+                <form class="navbar-form col-lg-3" role="search" ng-submit="performSearch($item, $model, $label)">
+
+                  <div class="form-group has-feedback"> 
+                
+                    <input autofill=off type="text" class="form-control" placeholder="Search" ng-model="searchData.query" typeahead="match for match in getMatches($viewValue)" typeahead-on-select="performSearch($item, $model, $label)"/>
+                    <i class="glyphicon glyphicon-search form-control-feedback clickable" ng-click="performSearch()"></i>
+                </div>
+              </form>
+            </li>
+          </ul>     
+    </div>
+  </div>
+</header>

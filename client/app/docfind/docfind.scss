@@ -1,0 +1,31 @@
+ 
+.iframe-container{
+  padding:  2em;
+  background-color: #CCE5E4;
+  iframe{
+    margin:0 auto;
+    min-height:1400px;
+    width:100%;
+  }
+}
+
+.doc-find-medical{
+  background-repeat:no-repeat;background-size: cover;
+  background-position-x: center;
+    background-image:url('/assets/images/landing/medicare-1.png');
+}
+
+.doc-find-dental{
+  background-repeat:no-repeat;background-size: cover;
+  background-position-x: center;
+    background-image:url('/assets/images/landing/id-card-5.png');
+}
+
+.doc-find-vision{
+  background-repeat:no-repeat;background-size: cover;
+  background-position-x: center;
+    background-image:url('/assets/images/landing/medicare-3.png');
+}
+.doc-find.command-form .form-group select{
+	margin-top: 1.35em;
+}
