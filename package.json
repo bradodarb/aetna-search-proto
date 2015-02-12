@@ -18,7 +18,8 @@
     "connect-mongo": "^0.4.1",
     "request": "*",
     "xpath":"*",
-    "xmldom": "*"
+    "xmldom": "*",
+    "cheerio": "*"
   },
   "devDependencies": {
     "grunt": "~0.4.4",
