@@ -18,21 +18,40 @@ var cheerio = require('cheerio');
 // Get list of things
 exports.index = function(req, res) {
 
-  var url = 'http://www.aetna.com/dse/search/results?searchQuery=Family+Practice&geoSearch=85268&pagination.offset=&zipCode=85268&distance=30&filterValues=&useZipForLatLonSearch=true&fastProduct=&currentSelectedPlan=&selectedMemberForZip=&sessionCachingKey=&loggedInZip=true&modalSelectedPlan=&isTab1Clicked=&isTab2Clicked=&quickSearchTypeMainTypeAhead=&quickSearchTypeThrCol=&mainTypeAheadSelectionVal=&thrdColSelectedVal=&isMultiSpecSelected=&hospitalNavigator=&productPlanName=&hospitalNameFromDetails=&planCodeFromDetails=&hospitalFromDetails=false&aetnaId=&Quicklastname=&Quickfirstname=&QuickZipcode=&QuickCoordinates=&quickSearchTerm=&ipaFromDetails=&ipaFromResults=&ipaNameForProvider=&porgId=&officeLocation=&otherOfficeProviderName=&officesLinkIsTrueDetails=false&groupnavigator=&groupFromDetails=&groupFromResults=&groupNameForProvider=&suppressFASTCall=&classificationLimit=&suppressFASTDocCall=true&axcelSpecialtyAddCatTierTrueInd=&suppressHLCall=&pcpSearchIndicator=true&specSearchIndicator=&stateCode=&geoMainTypeAheadLastQuickSelectedVal=&geoBoxSearch=&lastPageTravVal=&debugInfo=&linkwithoutplan=&site_id=docfind&sendZipLimitInd=&ioeqSelectionInd=&ioe_qType=&sortOrder=';
+  var url = 'http://www.aetna.com/dse/search/results?searchQuery=Family+Practice&geoSearch=53005&pagination.offset=&zipCode=53005&distance=30&filterValues=&useZipForLatLonSearch=true&loggedInZip=true&modalSelectedPlan=&hospitalFromDetails=false&officesLinkIsTrueDetails=false&suppressFASTDocCall=true&axcelSpecialtyAddCatTierTrueInd=&pcpSearchIndicator=true&stateCode=&geoMainTypeAheadLastQuickSelectedVal=&site_id=docfind';
 
   request(url, function (error, response, body) {
     if (!error && response.statusCode === 200) {
       //'#providersTable > tbody > tr > td:nth-child(2)'
       var $ = cheerio.load(body);
 
-			var data= $('#providersTable > tbody > tr > td:nth-child(2)') .clone()
-            .children()
-            .remove()
-            .end()
-            .text();
+			// var data= $('#providersTable > tbody > tr > td:nth-child(2)') .clone()
+   //          .children()
+   //          .remove()
+   //          .end()
+   //          .text();
+      var data = [];
+      $('#providersTable > tbody > tr > td:nth-child(2)').each(function(idx, elem){
+        var result = {};
+        result.name = $(this).find('a.links').html().trim();
+        var info = $(this).clone().children().remove().end().text().trim();
+        var infoParts = info.split('\n');
+        info = '';
+       ;
+
+        for (var i = 0; i < infoParts.length; i++) {
+          info += infoParts[i].trim() + ' ';
+        };
+        var phoneSplit = info.indexOf('Phone');
+        result.address = info.substring(0, phoneSplit).trim();
+        result.phone = info.substring(phoneSplit + 6, phoneSplit + 21).trim();
+        result.specialties =  info.substring(phoneSplit + 21, info.length).trim();
+       
+        data.push(result);
+      });
 
       console.log(data);
-      res.set('Content-Type', 'text/html');
+      res.set('Content-Type', 'application/json');
       res.send(data);
 
     }
