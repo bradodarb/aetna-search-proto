@@ -5,7 +5,8 @@ angular.module('applicationApp', [
   'ngResource',
   'ngSanitize',
   'ngRoute',
-  'ui.bootstrap'
+  'ui.bootstrap',
+  'LocalStorageModule'
 ])
   .config(function ($routeProvider, $locationProvider) {
     $routeProvider

@@ -23,4 +23,11 @@ console.log(app.get('appPath'));
       res.sendfile(app.get('appPath') + '/index.html');
 
     });
+  app.route('/id-card.pdf')
+    .get(function(req, res) {
+
+       res.sendfile(app.get('appPath') + '/assets/pdf/id-card.pdf');
+
+    });
+   
 };

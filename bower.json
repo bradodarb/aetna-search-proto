@@ -17,7 +17,8 @@
     "lodash": "~2.4.1",
     "hammerjs": "*",
     "heatmap.js-amd": "*",
-    "angular-google-maps": "*"
+    "angular-google-maps": "*",
+    "angular-local-storage": "*"
   },
   "devDependencies": {
     "angular-mocks": ">=1.2.*",

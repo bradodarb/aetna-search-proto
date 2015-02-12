@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('applicationApp')
-  .controller('MedicareCtrl', function ($scope, $http, $location, searchService) {
+  .controller('MedicareCtrl', function ($scope, $http, $location, searchService, loginService) {
  
    
 	$scope.searchData = {};

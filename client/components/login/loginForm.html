@@ -1,0 +1,29 @@
+<form name="loginForm" class="command-form" ng-submit="loginForm.$valid && login.trylogin()">
+  <div class="col-xs-7 sub-form">
+    <fieldset >
+      <legend>
+        <h2>Member Log In</h2>
+      </legend>
+      <div class="form-group pad-top-30 main">
+      <input type="text" placeholder="Name" ng-model="login.userName" required="">
+      <input type="password" placeholder="Password" required="">
+      <input class="login" type="submit" value="Secure log in">
+      <span class="secondary-action">Forgot <a>username</a> or <a>password</a>?</span>
+      </div>
+    </fieldset>
+  </div>
+  
+
+<!--<fieldset class="col-xs-5">
+      <legend><h2>Not a Member?</h2></legend>
+      <div class="form-group ">
+        
+        <input type="text" placeholder="Username">
+        <input type="text" placeholder="Email">
+        <input type="password" placeholder="Password">
+        <input type="password" placeholder="Repeat Password">
+        <input class="login" type="button" value="Register Now">
+
+      </div>
+    </fieldset>-->
+</form>
