@@ -9,6 +9,10 @@ angular.module('applicationApp')
     $scope.searchData.results = {};
     $scope.searchData.matches = [];
     $scope.commandStatus = 'idle';
+    $scope.commandStatusNext = 'idle';
+
+    $scope.login = {};
+    $scope.login.userName = loginService.getLogin(); 
 
     $scope.getMatches = function(match){
 
@@ -35,34 +39,57 @@ angular.module('applicationApp')
         $scope.searchData.query = '';
     };  
 
+     $scope.seeOtherResults = function(){
+        $location.path('/search/Doc Find'); 
+      };
+
     $scope.setIdle = function(){
-    $scope.commandStatus = 'idle';
-        console.log($scope.commandStatus );
+        $scope.commandStatus = 'idle';
     };
     $scope.setMedical = function(){
-    $scope.commandStatus = 'medical';
-        console.log($scope.commandStatus );
+        checkLogin('medical');
     };
     $scope.setDental = function(){
-    $scope.commandStatus = 'dental';
-        console.log($scope.commandStatus );
+        checkLogin('dental');
     };
     $scope.setVision = function(){
-    $scope.commandStatus = 'vision';
-        console.log($scope.commandStatus );
+        checkLogin('vision');
     };
- console.log($scope.commandStatus );
-    // var search.gem = function(data){
 
-    //   console.log(data);
 
-    //   for( prop in data){
 
-    //     if(data.length){
+    $scope.login.isLoggedIn = function(){
+        return loginService.isLoggedIn();
+    };
 
-    //       data.id = prop;
-          
-    //     }
-    //   }
-    // }
+    $scope.login.setLogin = function(){
+        $scope.commandStatus = 'login';
+    };
+    
+    $scope.login.trylogin = function(){
+        if(!!$scope.login.userName){
+          loginService.setLogin($scope.login.userName);
+          if(!!$scope.commandStatusNext){
+            $scope.commandStatus = $scope.commandStatusNext;
+          }else{
+            $scope.commandStatus = 'idle';
+          }
+        }
+    };
+    $scope.login.logout = function(){
+
+        loginService.clearLogin();
+        $scope.login.userName = '';
+
+    };
+
+    function checkLogin(status){
+
+        if(loginService.isLoggedIn()){
+          $scope.commandStatus = status;
+        }else{
+          $scope.commandStatusNext = status;
+          $scope.setLogin();
+        }
+    }
   });

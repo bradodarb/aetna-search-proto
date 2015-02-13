@@ -146,14 +146,38 @@
                         </div>
                       </fieldset>
                     </div>
-                  
-                  
-
-                    
                   </form>
 
                </div>
+
+               <div class="user-login col-md-8 flex-item" ng-show="commandStatus == 'step-1'">
+                  <span ng-click="setIdle()" class="close-form glyphicon glyphicon-remove"> </span>
+                  <form class="command-form">
+                    <div class="col-xs-7 ">
+                       <fieldset class="form-group" >
+                        <legend>
+                          <h2>Tell us what you're looking for</h2>  
+                        </legend>
+                        <select placeholder="Coverage">
+                          <option value="" disabled selected>Type of Doctor</option>
+                          <option>Medical</option>
+                          <option>Dental</option>
+                          <option>Vision</option>
+                        </select>
+
+                      </fieldset>
+                     </div>
+                  </form>
+               </div>
+
+               <div class="user-login col-md-8 flex-item" ng-show="commandStatus == 'login'">
+                  <span ng-click="setIdle()" class="close-form glyphicon glyphicon-remove"> </span>
+                  <div ng-include="'components/login/loginForm.html'"></div>
+
+               </div>
+
              </div>
+
              <div class="row">
  
              </div>
