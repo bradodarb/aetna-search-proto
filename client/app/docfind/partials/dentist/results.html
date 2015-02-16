@@ -1,0 +1,67 @@
+<div class=" flex-item doc-find-dental col-md-4">
+	<div class="cta">
+		<a >
+			<h3>Dental > </h3>
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque dapibus quis odio vel volutpat.</p>
+		</a>
+	</div> 
+</div>
+<div class="user-login col-md-8 flex-item">
+	<span ng-click="setState('docfind.home')"  class="close-form glyphicon glyphicon-remove"> </span>
+	<form class="doc-find command-form">
+		<div class="col-xs-12">
+			<fieldset >
+				<legend>
+					<h2>Narrow Your Results</h2>  
+				</legend>
+				<div class="form-group col-sm-6">
+					<select ng-model="docFind.searchRadius" ng-change="updateResults()" >
+						<option value="1" selected>In this Zip</option>	
+						<option value="5" >5 Miles</option>
+						<option value="10" >10 Miles</option>
+						<option value="15" >15 Miles</option>
+						<option value="20" >20 Miles</option>
+						<option value="25" >25 Miles</option>
+						<option value="30" >30 Miles</option>
+						<option value="35" >35 Miles</option>
+						<option value="40" >40 Miles</option>
+						<option value="50" >50 Miles</option>
+						<option value="60" >60 Miles</option>
+						<option value="70" >70 Miles</option>
+						<option value="90" >80 Miles</option>
+						<option value="95" >90 Miles</option>
+						<option value="100" >100 Miles</option>
+					</select>
+					<select ng-model="docFind.gender" ng-change="updateResults()" ng-options="item.match as item.display for item in docFind.result.filters.gendernavigator.items" >
+						<option value="" disabled selected>Gender</option>
+				 
+					</select>
+					<select ng-model="docFind.officeDetail" ng-change="updateResults()" >
+						<option value="" disabled selected>Office Detail</option>
+						<option value="Y">Accepting New Patients</option>
+						<option value="ERX">Electronic Prescribing Available</option>
+						<option value="RELAYHTH">Online Visits Available</option>
+					</select>
+					<select ng-model="docFind.group" ng-change="updateResults()" ng-options="item.match as item.display for item in docFind.result.filters.groupnavigator.items">
+						<option value="" disabled selected>Group Affiliation</option>
+					</select>
+				</div>
+				<div class="form-group col-sm-6 ">
+					<select ng-model="docFind.language" ng-change="updateResults()" ng-options="item.match as item.display for item in docFind.result.filters.languagenavigator.items">
+						<option value="" disabled selected>Language</option>
+					</select>
+					<select ng-model="docFind.hospital" ng-change="updateResults()" ng-options="item.match as item.display for item in docFind.result.filters.hospitalnavigator.items">
+						<option value="" disabled selected>Hospital Affiliation</option>
+					</select>
+					<select ng-model="docFind.planInfo" ng-change="updateResults()" >
+						<option value="" disabled selected>Plan Information</option>
+						<option value="AEX">Aexcel Designated</option>
+					</select>
+					<select  ng-model="docFind.doctorType" ng-change="updateResults()" ng-options="item.match as item.display for item in docFind.result.filters.rollupnavigator.items">
+						<option value="" disabled selected>Type of Doctor</option>
+					</select>
+				</div>
+			</fieldset>
+		</div>
+	</form>
+</div>

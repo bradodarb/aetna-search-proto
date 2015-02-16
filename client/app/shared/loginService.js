@@ -2,12 +2,16 @@
 
 angular.module('applicationApp').service('loginService',
 
-	function ($http, $location, localStorageService){
+	function ($http, $location, localStorageService, $state){
 
 		var loginKey = 'user';
 		var zipCodeKey = 'zipCode';
 		var _self = this;
-		this.getLogin = function(){
+
+		this.loginState = '';
+		this.logoutState = '';
+
+		this.__defineGetter__('login', function(){
 
 			if(localStorageService.isSupported){
 
@@ -19,9 +23,23 @@ angular.module('applicationApp').service('loginService',
 
 			}
 
-		};
+		});
 
-		this.getZipCode = function(){
+		this.__defineSetter__('login', function(login){
+
+			if(localStorageService.isSupported){
+
+				localStorageService.set(loginKey,login);
+
+			}else{
+
+				localStorageService.cookie.set(loginKey,login);
+
+			}
+
+		});
+
+		this.__defineGetter__('zipCode', function(){
 
 			if(localStorageService.isSupported){
 
@@ -33,43 +51,27 @@ angular.module('applicationApp').service('loginService',
 
 			}
 
-		};
+		});
 
-
-
-		this.setLogin = function(login){
+		this.__defineSetter__('zipCode', function(zipCode){
 
 			if(localStorageService.isSupported){
 
-				return localStorageService.set(loginKey,login);
+				localStorageService.set(zipCodeKey,zipCode);
 
 			}else{
 
-				return localStorageService.cookie.set(loginKey,login);
+				localStorageService.cookie.set(zipCodeKey,zipCode);
 
 			}
 
-		};
+		});
 
-		this.setZipCode = function(zipCode){
+		this.__defineGetter__('isLoggedIn', function(){
 
-			if(localStorageService.isSupported){
+			return !!_self.login;
 
-				return localStorageService.set(zipCodeKey, zipCode);
-
-			}else{
-
-				return localStorageService.cookie.set(zipCodeKey,zipCode);
-
-			}
-
-		};
-
-
-		this.isLoggedIn = function(){
-
-			return !!_self.getLogin();
-		};
+		});
 
 		this.clearLogin = function(){
 
@@ -85,5 +87,30 @@ angular.module('applicationApp').service('loginService',
 			}
 		};
 
+
+	    this.requestLogin = function(){
+	    	if(!!_self.loginState){
+
+	    		$state.go(_self.loginState);
+	    	}
+	    };
+
+	    this.trylogin = function(state){ 
+	    	if(!!_self.login){
+
+	    		$state.go(state);
+	    	}
+	    };
+
+	    this.logout = function(){
+
+			_self.clearLogin();
+
+			if(!!_self.logoutState){
+				
+	    		$state.go(_self.logoutState);
+	    	}
+
+	    };
 
 	});

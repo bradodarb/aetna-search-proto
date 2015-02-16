@@ -29,3 +29,20 @@
 .doc-find.command-form .form-group select{
 	margin-top: 1.35em;
 }
+.form-group .zipCode{
+
+  input, select{
+    width: 40%;
+  }
+}
+
+.angular-google-map-container { min-height: 600px; }
+
+.map-locations{
+  height: 600px;
+  overflow-y: scroll;
+}
+.doc-result .dist small, .doc-result .dist p{
+  text-align: center;
+}
+

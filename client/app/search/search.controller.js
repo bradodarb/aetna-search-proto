@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('applicationApp')
-  .controller('SearchCtrl', function ($scope, $http, $location, $routeParams, searchService) {
+  .controller('SearchCtrl', function ($scope, $http, $location, $stateParams, searchService) {
 
 	var _queryResult = '';
 	$scope.searchData = {};
@@ -18,7 +18,7 @@ angular.module('applicationApp')
 
         if($scope.searchData.query ==='<em style="pointer-events:none;">other popular searches...</em>'){
         $scope.searchData.query = '';
-          return;
+          $location.path('/search/Insurance'); 
         }
 		if(!$scope.searchData.query){
 	    		return;
@@ -52,8 +52,8 @@ angular.module('applicationApp')
     		$scope.searchData.query = $location.$$search.query;
     		$scope.performSearch();
     	}else{
-    		if($routeParams && $routeParams.query){
-				$scope.searchData.query = $routeParams.query;
+    		if($stateParams && $stateParams.query){
+				$scope.searchData.query = $stateParams.query;
 	    		$scope.performSearch();
     		}
     	}

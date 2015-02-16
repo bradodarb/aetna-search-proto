@@ -20,38 +20,85 @@
           <li><a href="/search-results">See other results &gt; </a></li>
           </ol> 
           <div class="content-container">
-            <div class="row flex-panel">
-               <div class="flex-item doc-find-medical col-md-4" ng-hide="commandStatus == 'dental' || commandStatus == 'vision'" ng-class="commandStatus == 'medical' ? 'command-active' :''">
+            <div class="row medicare-find-plan-form" ng-class="showPlanLinks ? 'expanded': ''">
+           
 
-                  <div class="cta">
-                    <a ng-click="setMedical()" >
-                      <h3>Search for a Medicare Provider > </h3>
-                      <p ng-hide="commandStatus == 'medical'">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque dapibus quis odio vel volutpat.</p>
-                    </a>
-                  </div>
-
+              <div class="row">
+               <div class="col-sm-4">
+                  <h2>Compare plans and costs</h2>
+                  <p>Find more information at:  <a href="//:medicare.com">medicare.com</a></p>
                 </div>
-
-                <div class=" flex-item doc-find-dental col-md-4" ng-hide="commandStatus == 'medical' || commandStatus == 'vision'" ng-class="commandStatus == 'dental' ? 'command-active' :''">
-                  <div class="cta">
-                    <a ng-click="setDental()">
-                      <h3>Find Your Prescription Drugs > </h3>
-                      <p ng-hide="commandStatus == 'dental'">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque dapibus quis odio vel volutpat.</p>
-                    </a>
-                  </div> 
+                <form name="medicareForm" class="col-sm-8 form" ng-submit="medicareForm.$valid && showPlanOptions()">       
+                <div class="col-sm-6">
+                  <input type="text" placeholder="Your Zip" ng-model="auth.zipCode" required="">
+                  <input type="text" placeholder="First Name" ng-model="auth.login">
+                </div>          
+                <div class="col-sm-6">
+                  <input type="submit" class="find-plans"  value="Explore plans">
+                </div>  
+                </form>
+              </div>
+               <div class="row right-action">
+                 <a ng-click="hidePlanOptions()" class="col-md-12 close-plans" >close plans <span  class=" close-form glyphicon glyphicon-remove"> </span></a>
                </div>
-
-
-                <div class=" flex-item doc-find-vision col-md-4" ng-hide="commandStatus == 'medical' || commandStatus == 'dental'" ng-class="commandStatus == 'vision' ? 'command-active' :''">
-                  <div class="cta">
-                    <a ng-click="setVision()">
-                      <h3>Learn the ABCDs of Medicare > </h3>
-                      <p ng-hide="commandStatus == 'vision'">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque dapibus quis odio vel volutpat.</p>
-                    </a>
-                  </div> 
+              
+              <div class="row">
+                <div class="col-md-4 plan-link">
+                  
+                  <h3>Medicare Part C:<br>Aetna Medicare Advantage Plan (MA/MAPD)</h3>
+                  <p>Our Medicare Advantage plans offer the same coverage as Original Medicare plus additional benefits. Many plans include prescription drug coverage, too.</p>
+                  <a class="btn cta-btn" href="https://rxtools.aetnamedicare.com/plancompare/consumer/2015/individual/Home/Home?Validate=Yes&Zip={{auth.zipCode}}&Name={{auth.login}}">See plans and costs</a>
                 </div>
+                <div class="col-md-4 plan-link">
+                  <h3>Aetna Medicare Supplement Plan <br>(Medigap)<br></h3>
+                  <p>Our Medicare Supplement plans work with Original Medicare Parts A and B. You keep both Parts A and B. These plans help pay for some health care costs not covered by Original Medicare, such as deductibles and coinsurance.</p>
+                  <a class="btn cta-btn" href="http://www.aetnamedicare.com/plan_choices/new-supplement_overview_az.jsp">See plans and costs</a>
+                </div>
+                <div class="col-md-4 plan-link">
+                  <h3>Medicare<br>Part D: Aetna Medicare Rx Plan <br>(PDP)</h3>
+                  <p>Our Medicare Advantage plans offer the same coverage as Original Medicare plus additional benefits. Many plans include prescription drug coverage, too.</p>
+                  <a class="btn cta-btn" href="https://rxtools.aetnamedicare.com/plancompare/consumer/2015/individual/Home/Home?Validate=Yes&Zip={{auth.zipCode}}&Name={{auth.login}}&InitPlanType=PDP">See plans and costs</a>
+                </div>
+              </div>
             </div>
+            <div ui-view class="row flex-panel">
 
+            </div>
+            <div class="row" ng-show="viewMap" >
+              <div id="map" class="col-md-8 hidden-sm">
+                <ui-gmap-google-map center="map.center" zoom="map.zoom" control="mapControl">
+                  <ui-gmap-markers
+                            models="markers"
+                            fit="true"
+                            labelContent="'stuff'"
+                            coords="'location'"
+                            icon="'icon'"
+                            labelClass="'mam-lables'">
+                            <ui-gmap-windows show="show">
+                                <span ng-non-bindable>{{item.name}}</span> 
+                            </ui-gmap-windows>
+                    </ui-gmap-markers>
+                </ui-gmap-google-map>
+              </div>
+              <div class="col-md-4 map-locations" >
+                <table class="table table-striped"> 
+                    <tbody>
+                        <tr class="doc-result" ng-repeat="item in  docFind.result.results">
+                          <td class="dist">
+                            <img src="/assets/images/marker-{{item.id + 1}}.png">
+                            <p><small>{{item.distance}}</small></p>
+                          </td>
+                          <td>
+                        <span>{{item.name}}</span>
+                        <p>{{item.address}}</p>
+                        <p><span>Phone:</span>{{item.phone}}</p>
+                        <p><span>Specialties:</span>{{item.specialties}}</p>
+                          </td>
+                    </tr> 
+                    </tbody>
+                  </table>
+              </div>
+            </div>
             <div class="row faq">
               <h2 class="title">Frequently Asked Questions (FAQ)</h2>
 

@@ -1,10 +1,14 @@
 'use strict';
-
+ 
 angular.module('applicationApp')
-  .config(function ($routeProvider) {
-    $routeProvider
-      .when('/search/:query?', {
-        templateUrl: 'app/search/search.html',
-        controller: 'SearchCtrl'
-      });
+  .config(function ($stateProvider, $urlRouterProvider) {
+
+	$stateProvider
+	.state('search', {
+		url: "/search/:query?",
+		templateUrl: 'app/search/search.html',
+		controller: 'SearchCtrl',
+		data:{}
+	});
+	
   });

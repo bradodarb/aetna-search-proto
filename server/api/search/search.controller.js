@@ -9,12 +9,8 @@
 
 'use strict';
 
-var _ = require('lodash');
-var request = require('request');
-var xpath = require('xpath');
-var dom = require('xmldom').DOMParser;
-var fs = require('fs');
 
+var request = require('request');
 // Get list of things
 exports.index = function(req, res) {
 

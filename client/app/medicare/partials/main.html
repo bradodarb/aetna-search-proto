@@ -1,0 +1,29 @@
+<div class="flex-item doc-find-medical col-md-4" ng-hide="commandStatus == 'dental' || commandStatus == 'vision'" ng-class="commandStatus == 'medical' ? 'command-active' :''">
+
+  <div class="cta">
+    <a ui-sref="medicare.doctor-zipCode" >
+      <h3>Search for a Medicare Provider > </h3>
+      <p >Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque dapibus quis odio vel volutpat.</p>
+    </a>
+  </div>
+
+</div>
+
+<div class=" flex-item doc-find-dental col-md-4" ng-hide="commandStatus == 'medical' || commandStatus == 'vision'" ng-class="commandStatus == 'dental' ? 'command-active' :''">
+  <div class="cta">
+    <a ui-sref="medicare.find-drugs">
+      <h3>Find Your Prescription Drugs > </h3>
+      <p >Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque dapibus quis odio vel volutpat.</p>
+    </a>
+  </div> 
+</div>
+
+
+<div class=" flex-item doc-find-vision col-md-4" ng-hide="commandStatus == 'medical' || commandStatus == 'dental'" ng-class="commandStatus == 'vision' ? 'command-active' :''">
+  <div class="cta">
+    <a href="http://www.aetnamedicare.com/learn_about_medicare/learn_about_medicare.jsp?" target="_blank">
+      <h3>Learn the ABCDs of Medicare > </h3>
+      <p >Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque dapibus quis odio vel volutpat.</p>
+    </a>
+  </div>
+</div>

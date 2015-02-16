@@ -1,0 +1,41 @@
+<div class=" flex-item doc-find-dental col-md-4">
+	<div class="cta">
+		<a >
+			<h3>Dental > </h3>
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque dapibus quis odio vel volutpat.</p>
+		</a>
+	</div> 
+</div>
+<div class="user-login col-md-8 flex-item" >
+	<span ng-click="setState('docfind.home')"  class="close-form glyphicon glyphicon-remove"> </span>
+	<form class="command-form " >
+		<div class="col-xs-6 ">
+			<fieldset class="form-group main" >
+				<legend>
+					<h2>Choose a plan</h2>  
+				</legend>
+ 				<select size="1"  ng-model="docFind.planQuery"> <option  value="">Select</option> <optgroup label="DMO®/Managed Dental" class="ddbold_rd"></optgroup> <option value="DMO|DMO" >Dental Maintenance Organization(DMO®)</option> <option value="DHMO|Advantage" >Aetna Advantage™ Dental</option> <option value="DHMO|Basic Dental" >Basic Dental/Discount Dental/Family Preventive Dental</option> <optgroup label="Dental PPO/PDN" class="ddbold_rd"></optgroup> <option value="DPPO|Dental PPO" >Dental PPO/PDN</option> <option value="DPPO|Dental Fund" >Aetna HealthFund®/Aetna DentalFund®</option> <option value="DPPO|Dental EPP" >Dental EPP</option> <optgroup label="Dental PPO/PDN with PPO II network" class="ddbold_rd"></optgroup> <option value="DPPO2|Dental PPO 2" >Dental PPO/PDN with PPO II</option> <option value="DPPO2|Dental Fund 2" >Aetna HealthFund®/Aetna DentalFund® with PPO II Network</option> <option value="DPPO2|Aetna Individual Advantage SM Dental PPO" >Aetna Individual Advantage℠ Dental PPO</option> <option value="DPPO2|Dental EPP 2" >Dental EPP with PPO II Network</option> <option value="AFCH|Affordable Health Choices" >Affordable Health Choices from Aetna℠</option> <optgroup label="Aetna Dental Access®" class="ddbold_rd"></optgroup> <option value="DAPPO|Aetna Access" >Vital Savings by Aetna®</option> <optgroup label="Aetna Pediatric Dental Plan" class="ddbold_rd"></optgroup> <option value="XDPPO|Aetna Pediatric Dental Plan" >Aetna Pediatric Dental Plan</option> </select>
+
+				<a class="login btn" ng-click="getResults(true, 'docfind.dentist-results', 'docfind.dentist-loading')">Find Dentists</a>
+			</fieldset>
+		</div>
+		<div class="col-xs-6 ">
+			<fieldset class="form-group" >
+				<legend>
+					<h2>Search without a plan*</h2>  
+				</legend>
+
+				<p>
+					<strong>* You could end up paying a lot more if you use a health care professional that does not accept your plan or does not provide the highest level of coverage under your plan.</strong>
+				</p>
+				<p>
+					NOTE: You can call doctors before you see them, to find out if they accept your plan.
+				</p>
+				<p>
+					If you have Medicare or Medicaid coverage, please use the Medicare or Medicaid directories.
+				</p>
+				<a class="login btn" ng-click="getResults(false, 'docfind.dentist-results', 'docfind.dentist-loading')">Find Dentists</a>
+			</fieldset>
+		</div>
+	</form>
+</div>

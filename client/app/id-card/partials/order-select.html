@@ -1,0 +1,41 @@
+<div class=" flex-item id-card-2 col-md-4">
+	<div class="cta">
+		<a>
+			<h3>Order your replacement ID card > </h3>
+			<!--<p ng-hide="commandStatus == 'replace'">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque dapibus quis odio vel volutpat.</p>-->
+		</a>
+	</div> 
+</div>
+
+<div class="user-login col-md-8 flex-item">
+	<a ui-sref="id-card.home" ><span  class="close-form glyphicon glyphicon-remove"> </span></a>
+	<form class="command-form" >
+		<div class="col-xs-7 ">
+			<fieldset >
+				<legend>
+					<h2>Select a member and card type</h2>  
+				</legend>
+				<div class="form-group pad-top-30 main">
+					<select placeholder="Name">
+						<option ng-bind="auth.login"></option>
+						<option >Spouse</option>
+						<option >Child</option>
+					</select>
+					<select placeholder="Coverage">
+						<option>Medical</option>
+						<option>Dental</option>
+						<option>Vision</option>
+					</select>
+					<small>This is the email address we have on file for you</small>
+					<input type="email" placeholder="Email" value="{{auth.login}}@domain.com">
+					<a class="login btn" ui-sref="id-card.order-confirm">Order Now</a>
+					<br><br>
+				</div>
+			</fieldset>
+		</div> 
+
+		<div class="col-xs-5">
+			<img src="/assets/images/landing/id-card-faq-light.png">
+		</div>
+	</form>
+</div>

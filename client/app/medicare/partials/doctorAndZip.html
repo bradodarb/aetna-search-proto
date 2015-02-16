@@ -1,0 +1,56 @@
+<div class="flex-item doc-find-medical col-md-4" ng-hide="commandStatus == 'dental' || commandStatus == 'vision'" ng-class="commandStatus == 'medical' ? 'command-active' :''">
+
+  <div class="cta">
+	<a ui-sref="medicare.doctor-zipCode" >
+      <h3>Search for a Medicare Provider > </h3>
+      <p ng-hide="commandStatus == 'medical'">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque dapibus quis odio vel volutpat.</p>
+    </a>
+  </div>
+
+</div>
+<div class="user-login col-md-8 flex-item" >
+	<span ng-click="setState('medicare.home')"  class="close-form glyphicon glyphicon-remove"> </span>
+	<form class="command-form" ng-submit="setState('medicare.doctor-planType')">
+		<div class="col-xs-7 ">
+			<fieldset class="form-group" >
+				<legend>
+					<h2>What kind of doctor?</h2>  
+				</legend>
+				<select placeholder="Coverage" ng-model="docFind.searchQuery">
+					<option value="" disabled selected>Choose...</option>
+					<option value="AllPCPs" >AllPCPs</option>	
+					<option value="AdolescentMedicine" >AdolescentMedicine</option>
+					<option value="FamilyPractice" >FamilyPractice</option>
+					<option value="GeneralPractice" >GeneralPractice</option>
+					<option value="GeriatricMedicine" >GeriatricMedicine</option>
+					<option value="InternalMedicine" >InternalMedicine</option>
+					<option value="Obstetrics&amp;Gynecology-PCP" >Obstetrics&amp;Gynecology-PCP</option>
+					<option value="PediatricInternalMedicine" >PediatricInternalMedicine</option>
+					<option value="Pediatrics" >Pediatrics</option>
+				</select>
+				<div class="zipCode">
+					<input type="text" placeholder="Zip Code" required="" ng-model="auth.zipCode">
+					<select ng-model="docFind.searchRadius">
+						<option value="1" selected>In this Zip</option>	
+						<option value="5" >5 Miles</option>
+						<option value="10" >10 Miles</option>
+						<option value="15" >15 Miles</option>
+						<option value="20" >20 Miles</option>
+						<option value="25" >25 Miles</option>
+						<option value="30" >30 Miles</option>
+						<option value="35" >35 Miles</option>
+						<option value="40" >40 Miles</option>
+						<option value="50" >50 Miles</option>
+						<option value="60" >60 Miles</option>
+						<option value="70" >70 Miles</option>
+						<option value="90" >80 Miles</option>
+						<option value="95" >90 Miles</option>
+						<option value="100" >100 Miles</option>
+					</select>
+				</div>
+				<input class="login" type="submit" value="Search" name="submitZip">
+ 
+			</fieldset>
+		</div>
+	</form>
+</div>

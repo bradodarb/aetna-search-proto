@@ -7,8 +7,8 @@
             <li class="active hidden-sm"><a href="#" class="primary">&#9776; Menu</a></li>
             <li class="divider hidden-sm"></li>
             <li class="hidden-xs"><a href="#">Shop</a></li>
-            <li class="hidden-xs" ng-hide="login.isLoggedIn()"><a href="#" ng-click="login.setLogin()">Log In</a></li>
-            <li class="hidden-xs" ng-show="login.isLoggedIn()"><a href="#" ng-click="login.logout()">Log Out, <span ng-bind="login.userName"></span></a></li>
+            <li class="hidden-xs" ng-hide="auth.isLoggedIn"><a href="#" ng-click="auth.requestLogin()">Log In</a></li>
+            <li class="hidden-xs" ng-show="auth.isLoggedIn"><a href="#" ng-click="auth.logout()">Log Out, <span ng-bind="auth.login"></span></a></li>
             <li class="hidden-xs"><a href="#">Contact</a></li>
             <li>
                 <form class="navbar-form col-lg-3" role="search" ng-submit="performSearch($item, $model, $label)">

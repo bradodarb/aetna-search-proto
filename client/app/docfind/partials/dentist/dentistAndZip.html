@@ -1,0 +1,51 @@
+<div class=" flex-item doc-find-dental col-md-4">
+	<div class="cta">
+		<a >
+			<h3>Dental > </h3>
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque dapibus quis odio vel volutpat.</p>
+		</a>
+	</div> 
+</div>
+<div class="user-login col-md-8 flex-item" >
+	<span ng-click="setState('docfind.home')"  class="close-form glyphicon glyphicon-remove"> </span>
+	<form class="command-form" ng-submit="setState('docfind.dentist-planType')">
+		<div class="col-xs-7 ">
+			<fieldset class="form-group" >
+				<legend>
+					<h2>What kind of dentist?</h2>  
+				</legend>
+				<select placeholder="Coverage" ng-model="docFind.searchQuery">
+					<option value="" disabled selected>Choose...</option>
+					<option value="Dentists" >Dentists (Primary Care)</option>	
+					<option value="Endodontics" >Endodontics</option>
+					<option value="Orthodontics" >Orthodontics</option>
+					<option value="Pediatric Dentistry" >Pediatric Dentistry</option>
+					<option value="Periodontics" >Periodontics</option>
+					<option value="Prosthodontics" >Prosthodontics</option>
+				</select>
+				<div class="zipCode">
+					<input type="text" placeholder="Zip Code" required="" ng-model="auth.zipCode">
+					<select ng-model="docFind.searchRadius">
+						<option value="1" selected>In this Zip</option>	
+						<option value="5" >5 Miles</option>
+						<option value="10" >10 Miles</option>
+						<option value="15" >15 Miles</option>
+						<option value="20" >20 Miles</option>
+						<option value="25" >25 Miles</option>
+						<option value="30" >30 Miles</option>
+						<option value="35" >35 Miles</option>
+						<option value="40" >40 Miles</option>
+						<option value="50" >50 Miles</option>
+						<option value="60" >60 Miles</option>
+						<option value="70" >70 Miles</option>
+						<option value="90" >80 Miles</option>
+						<option value="95" >90 Miles</option>
+						<option value="100" >100 Miles</option>
+					</select>
+				</div>
+				<input class="login" type="submit" value="Search" name="submitZip">
+ 
+			</fieldset>
+		</div>
+	</form>
+</div>

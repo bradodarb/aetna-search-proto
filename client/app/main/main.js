@@ -1,10 +1,14 @@
 'use strict';
 
+
 angular.module('applicationApp')
-  .config(function ($routeProvider) {
-    $routeProvider
-      .when('/', {
-        templateUrl: 'app/main/main.html',
-        controller: 'MainCtrl'
-      });
+  .config(function ($stateProvider, $urlRouterProvider) {
+
+	$stateProvider.state('main', {
+		url: "/",
+		templateUrl: 'app/main/main.html',
+		controller: 'MainCtrl',
+		data:{}
+	});
+	
   });

@@ -13,3 +13,72 @@
       background-repeat:no-repeat;
         background-image:url('/assets/images/landing/medicare-4.png');
     }
+
+    .medicare-find-plan-form{
+      background: rgba(255,255,255,1);
+      background: -moz-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(199,199,199,1) 100%);
+      background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(255,255,255,1)), color-stop(100%, rgba(199,199,199,1)));
+      background: -webkit-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(199,199,199,1) 100%);
+      background: -o-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(199,199,199,1) 100%);
+      background: -ms-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(199,199,199,1) 100%);
+      background: linear-gradient(to bottom, rgba(255,255,255,1) 0%, rgba(199,199,199,1) 100%);
+      filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#c7c7c7', GradientType=0 );
+
+      height: 160px;
+      padding-left: 40px;
+      text-overflow: hidden;
+
+      .plan-link{
+        display: none;
+        padding:1em 2em;
+        margin-bottom: 1em;
+      }
+      .form{
+        input{
+          width:90%;
+          font-size: 1.5em;
+          background:#FFF;
+          margin-top: 15px;
+          padding:5px;
+        }
+
+        .find-plans{
+          width: 90%;
+          background:#5C982A;
+          color: #FFF;
+          display: inline-block;
+          height:60px;
+          text-align: center;
+          font-size: 1.5em; 
+          margin-top: 32px;
+        }
+
+      }
+      .close-plans{
+          text-align: right; 
+          cursor: pointer;
+        }
+      .right-action{
+        width: 99%;
+        display: none;
+      }
+    }
+    .medicare-find-plan-form.expanded{
+      height: auto;
+
+      .plan-link{
+        display: block;
+      }
+      .right-action{
+        display: block;
+      }
+    }
+    .cta-btn{
+        background-color:#5e9732;
+        color: #FFF;
+        width: auto;
+        padding:10px 15px;
+        margin-top:18.8999996185303px;
+        font-size: 1.35em;
+       
+      }

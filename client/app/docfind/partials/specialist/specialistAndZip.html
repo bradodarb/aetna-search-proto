@@ -1,0 +1,44 @@
+<div class=" flex-item doc-find-vision col-md-4">
+	<div class="cta">
+		<a >
+			<h3>Specialists > </h3>
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque dapibus quis odio vel volutpat.</p>
+		</a>
+	</div> 
+</div>
+<div class="user-login col-md-8 flex-item" >
+	<span ng-click="setState('docfind.home')" class="close-form glyphicon glyphicon-remove"> </span>
+	<form class="command-form" ng-submit="setState('docfind.specialist-planType')">
+		<div class="col-xs-7 ">
+			<fieldset class="form-group" >
+				<legend>
+					<h2>What kind of specialist?</h2>  
+				</legend>
+				<select ng-model="docFind.searchQuery" size="1"> <option selected disabled value="">Select</option><option value="Allergy &amp; Immunology" >Allergy &amp; Immunology</option> <option value="Cardiology" >Cardiology</option> <option  value="Chiropractic" >Chiropractic</option> <option value="Dermatology" >Dermatology</option> <option value="Endocrinology" >Endocrinology</option> <option value="ENT Trauma" >ENT Trauma</option> <option value="Gastroenterology" >Gastroenterology</option> <option value="Neurology" >Neurology</option> <option  value="Neurosurgery" >Neurosurgery</option> <option value="OB-GYN (GYN Only)" >OB-GYN (GYN Only)</option> <option value="OB-GYN (Obstetrics/Gynecology and Nurse Midwife)" >OB-GYN (Obstetrics/Gynecology and Nurse Midwife)</option> <option value="Oncology" >Oncology</option> <option value="Ophthalmology" >Ophthalmology</option> <option value="Optometry" >Optometry</option> <option value="Oral Surgery" >Oral Surgery</option> <option  value="Orthopedics" >Orthopedics</option> <option value="Otolaryngology (ENT)" >Otolaryngology (ENT)</option> <option value="Pain Management" >Pain Management</option> <option value="Physical Therapy" >Physical Therapy</option> <option value="Plastic Surgery" >Plastic Surgery</option> <option value="Podiatry" >Podiatry</option> <option value="Pulmonology" >Pulmonology</option> <option value="Rheumatology" >Rheumatology</option> <option value="Surgery" >Surgery</option> <option value="Urology" >Urology</option> <option value="PROV_MEDSPEC" class="quickSearch_Select_moreSpec">More Specialties</option> </select>
+
+				<div class="zipCode">
+					<input type="text" placeholder="Zip Code" required="" ng-model="auth.zipCode">
+					<select ng-model="docFind.searchRadius">
+						<option value="1" selected>In this Zip</option>	
+						<option value="5" >5 Miles</option>
+						<option value="10" >10 Miles</option>
+						<option value="15" >15 Miles</option>
+						<option value="20" >20 Miles</option>
+						<option value="25" >25 Miles</option>
+						<option value="30" >30 Miles</option>
+						<option value="35" >35 Miles</option>
+						<option value="40" >40 Miles</option>
+						<option value="50" >50 Miles</option>
+						<option value="60" >60 Miles</option>
+						<option value="70" >70 Miles</option>
+						<option value="90" >80 Miles</option>
+						<option value="95" >90 Miles</option>
+						<option value="100" >100 Miles</option>
+					</select>
+				</div>
+				<input class="login" type="submit" value="Search" name="submitZip">
+ 
+			</fieldset>
+		</div>
+	</form>
+</div>

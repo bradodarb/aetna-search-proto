@@ -1,19 +1,23 @@
 'use strict';
 
-angular.module('applicationApp')
-  .controller('IdCardCtrl', function ($scope, $http, $location, searchService, loginService) {
+var app = angular.module('applicationApp');
+
+app.controller('IdCardCtrl', function ($scope, $http, $location, searchService, loginService, $state) {
  
    
-	$scope.searchData = {};
+    $scope.searchData = {};
   	$scope.searchData.query = '';
     $scope.searchData.results = {};
     $scope.searchData.matches = [];
     $scope.commandStatus = 'idle';
     $scope.commandStatusNext = 'idle';
 
-    $scope.login = {};
-    $scope.login.userName = loginService.getLogin(); 
- 
+    $scope.auth = loginService; 
+
+
+    $scope.auth.loginState = 'id-card.print-login';
+    $scope.auth.logoutState = 'id-card.home';
+
     $scope.getMatches = function(match){
 
 		  return searchService.getMatches(match);
@@ -24,7 +28,7 @@ angular.module('applicationApp')
 
        if($scope.searchData.query === '<em style="pointer-events:none;">other popular searches...</em>'){
         $scope.searchData.query = '';
-          return;
+          $location.path('/search/Insurance'); 
         }
         var customPage = searchService.customPageRequest($scope.searchData.query);
         if(customPage){
@@ -40,63 +44,5 @@ angular.module('applicationApp')
         $scope.searchData.query = '';
       };
 
-
-      $scope.seeOtherResults = function(){
-
-        $location.path('/search/id card'); 
-      };
-      $scope.setIdle = function(){
-        $scope.commandStatus = 'idle';
-      };
-
-      $scope.setLogin = function(){
-        $scope.commandStatus = 'login';
-      };
-
-      $scope.setPrint = function(){
-        checkLogin('print');
-      };
-
-      $scope.setReplace = function(){
-        checkLogin('replace');
-      };
-      $scope.setRequested = function(){
-        checkLogin('requested');
-      };
-
-
-
-      $scope.login.isLoggedIn = function(){
-        return loginService.isLoggedIn();
-      };
-
-      $scope.login.setLogin = function(){
-        $scope.commandStatus = 'login';
-      };
-      $scope.login.trylogin = function(){
-        if(!!$scope.login.userName){
-          loginService.setLogin($scope.login.userName);
-          if(!!$scope.commandStatusNext){
-            $scope.commandStatus = $scope.commandStatusNext;
-          }else{
-            $scope.commandStatus = 'idle';
-          }
-        }
-      };
-      $scope.login.logout = function(){
-
-        loginService.clearLogin();
-        $scope.login.userName = '';
-
-      };
-
-      function checkLogin(status){
-
-        if(loginService.isLoggedIn()){
-          $scope.commandStatus = status;
-        }else{
-          $scope.commandStatusNext = status;
-          $scope.setLogin();
-        }
-      }
+    $state.go('id-card.home');
   });

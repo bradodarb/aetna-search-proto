@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('applicationApp')
-  .controller('MainCtrl', function ($scope, $http, $location, $routeParams, searchService) {
+  .controller('MainCtrl', function ($scope, $http, $location, $stateParams, searchService) {
 
    $scope.searchData = {};
     $scope.searchData.query = '';
